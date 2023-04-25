@@ -1,5 +1,7 @@
 # Creating Kafka cluster using Docker Compose and uses Spring Kafka to send and receive data from topics
 
+This project consists of two modules ms-consumer and ms-producer which can be started on port 8082 and 8083. (Here is an example of [creating Gradle multi-module project](https://github.com/orb48/multimodule))
+
 ## Requirements
 * Java 17  
 * Spring  
