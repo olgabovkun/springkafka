@@ -7,7 +7,7 @@ This project consists of two modules ms-consumer and ms-producer which can be st
 * Spring  
 * Docker  
 
-## Creating docker-compose file
+## Creating kafka cluster docker-compose file
 Docker Compose uses the Compose file format to running multi-container applications on Docker.  With a Compose file, the application can be created and started with a single command, `docker compose up`.
 
 **Step 1.** Install docker https://docs.docker.com/get-docker/  
@@ -17,3 +17,12 @@ Docker Compose uses the Compose file format to running multi-container applicati
   
 **Step last.** Stop app `docker compose down`  
 
+## Send data
+To send data you need to start modules ms-consumer, ms-producer on port 8082 and 8083.  
+Using curl send request to topic:  
+
+`curl --location 'http://localhost:8083/api/v1/producer/send-message' \
+--header 'Content-Type: application/json' \
+--data '{
+    "message": "any message"
+}'`
